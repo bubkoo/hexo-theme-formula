@@ -1,0 +1,12 @@
+mixin gallery(post)
+  if post.photos && post.photos.length
+    section.article-gallery
+      div.article-gallery-photos
+        each photo in post.photos
+          - photo = url_for(photo)
+          img(src=photo, itemprop='image')
+      //- 只有一张图片时不显示控制按钮
+      if post.photos.length > 1
+        div.article-gallery-control
+          div.prev
+          div.next

@@ -1,0 +1,6 @@
+if page.total
+  nav#pagination.clearfix
+    if page.prev
+      a.f-left.prev(href=url_for(page.prev_link))= __('prev')
+    if page.next
+      a.f-right.next(href=url_for(page.next_link))= __('next')

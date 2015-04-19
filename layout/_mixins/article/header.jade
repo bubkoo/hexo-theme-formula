@@ -1,0 +1,27 @@
+mixin header(post)
+  //- 没有标题时不显示 header
+  if post.title || post.link
+
+    header.article-header
+
+      - var isIndex = is_home()
+
+      //- icon
+      if post.layout !== 'page'
+        span.article-header-icon(class=isIndex ? '' : 'icon-black')
+
+      //- title
+      - var title = post.title || post.link
+      - var href = post.link || url_for(post.path)
+
+      h1.article-header-title
+        if isIndex
+          a(href=href)= title
+        else
+          = title
+
+      //- time
+      if post.layout !== 'page'
+        time.article-header-time(datetime=date_xml(post.date), itemprop='datePublished')
+          span.day= date(post.date, __('day_format'))
+          span.month= date(post.date, __('year_month_format'))

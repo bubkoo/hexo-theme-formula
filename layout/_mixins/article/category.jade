@@ -1,0 +1,10 @@
+mixin category(post)
+
+  if post.categories && post.categories.length
+
+    - var cats = [];
+    each cat in post.categories.toArray()
+      - cats.push(link_to(url_for(cat.path), cat.name))
+
+    div.categories
+      != cats.join(', ')

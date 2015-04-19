@@ -1,0 +1,56 @@
+if is_home()
+
+  include ../_mixins/article
+  each post in page.posts.toArray()
+    +article(post)
+  include ./pagination
+
+else
+
+  include ../_mixins/archive
+
+  if is_year() || is_category() || is_tag()
+
+    - var title
+    if is_archive()
+      if(page.year)
+        - title = page.year + (page.month ? '-' + page.month : '')
+      else
+        - title = __('archive')
+    else
+      - title = page.category || page.tag
+
+    - var type
+    if page.category
+      - type = 'category'
+    if page.tag
+      - type = 'tag'
+
+    h2.archive-title(class=type ? ('archive-title-' + type) : '')
+      = title
+    div.archives
+      each post in page.posts.toArray()
+        +archive(post)
+
+  else
+
+    mixin listArchives(year, posts)
+      h2.archive-title= last
+      div.archives
+        each post in posts
+          +archive(post)
+
+    - var last = -1
+    - var list
+    each post in page.posts.sort('date', -1).toArray()
+      - var year = post.date.year()
+      if last !== year
+        if last !== -1
+          +listArchives(last, list)
+
+        - list = []
+        - last = year
+      - list.push(post)
+
+    if last !== -1
+      +listArchives(last, list)

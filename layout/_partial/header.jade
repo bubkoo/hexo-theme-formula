@@ -1,0 +1,10 @@
+header#header.inner(hoot='default', hoot-rate='1')
+  div.f-left
+    a.site-title(href=config.root)= config.title
+    if config.subtitle
+      span.site-sub-title= config.subtitle
+  nav.f-right
+    ul.site-nav
+      each link, name in theme.menu
+        li
+          a(href=link)= name

@@ -1,0 +1,9 @@
+extends _layout/default
+
+block content
+  include ./_mixins/article
+  +article(page)
+
+block aside
+  include ./_mixins/toc
+  +toc(page)

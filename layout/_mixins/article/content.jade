@@ -1,0 +1,6 @@
+mixin content(post)
+  section.article-content
+    if post.excerpt && is_home()
+      !=post.excerpt
+    else
+      !=post.content

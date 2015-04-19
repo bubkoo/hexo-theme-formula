@@ -1,0 +1,7 @@
+mixin comment(post)
+  if !is_home() && page.comments && theme.duoshuo
+    section#article-comment.article-comment
+      div.ds-thread(
+      data-thread-key=post.permalink,
+      data-title=post.title,
+      data-url=post.permalink)

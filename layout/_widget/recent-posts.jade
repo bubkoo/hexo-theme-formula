@@ -1,0 +1,5 @@
+if site.posts.length
+   div.widget
+      h3.widget-title= __('recent_posts')
+      div.widget-content
+         != list_posts({amount:theme.recent_posts_count})

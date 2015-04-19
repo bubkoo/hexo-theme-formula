@@ -1,0 +1,26 @@
+aside#sidebar(role='sidebar')
+  each widget in theme.widgets
+    case widget
+      when 'search'
+        include ../_widget/search
+
+      when 'tagcloud'
+        include ../_widget/tagcloud
+
+      when 'category'
+        include ../_widget/category
+
+      when 'archive'
+        include ../_widget/archive
+
+      when 'recent_posts'
+        include ../_widget/recent-posts
+
+      when 'recent_comments'
+        include ../_widget/recent-comments
+
+      when 'recent_visitors'
+        include ../_widget/recent-visitors
+
+      when 'clock'
+        include ../_widget/clock

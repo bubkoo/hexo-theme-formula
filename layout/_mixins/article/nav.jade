@@ -1,0 +1,12 @@
+mixin nav(post)
+  if !is_home() && (post.prev || post.next)
+    nav.article-nav.clearfix
+      if post.prev
+        a.article-nav-link.article-nav-newer(href=url_for(post.prev.path))
+          strong.article-nav-type Newer
+          span.article-nav-title= post.prev.title || '...'
+
+      if post.next
+        a.article-nav-link.article-nav-older(href=url_for(post.next.path))
+          strong.article-nav-type Older
+          span.article-nav-title= post.next.title || '...'

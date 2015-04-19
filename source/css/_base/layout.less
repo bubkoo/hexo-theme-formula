@@ -1,0 +1,151 @@
+@font-face {
+  .font-face(@font-icon, @font-icon-path, 'FontAwesomeRegular');
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Press Start 2P'),
+  local('PressStart2P-Regular'),
+  url(//fontsta.sh/font/pressstart2p/PressStart2P-Regular.ttf) format('truetype'),
+  url(//fontsta.sh/font/pressstart2p/PressStart2P-Regular.woff) format('woff'),
+  url(//fontsta.sh/font/pressstart2p/PressStart2P-Regular.eot) format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Mono'),
+  local('DroidSansMono'),
+  url(//fontsta.sh/font/droidsansmono/DroidSansMono.ttf) format('truetype'),
+  url(//fontsta.sh/font/droidsansmono/DroidSansMono.woff) format('woff'),
+  url(//fontsta.sh/font/droidsansmono/DroidSansMono.eot) format('embedded-opentype');
+}
+
+body {
+  background: url('/images/bg.jpg') fixed repeat center top @color-background;
+  color: @color-font;
+  font-family: @font-default;
+  font-size: 14px;
+  line-height: 1.75em;
+  text-shadow: 0 0 1px transparent;
+
+  & ::selection,
+  & ::-moz-selection {
+    color: #fff;
+    background: #E84893;
+    text-shadow: none;
+  }
+
+  @media screen and (max-width: 1020px) {
+    margin: 0 30px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 13px;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @font-title;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+a {
+  text-decoration: none;
+  color: @color-link;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clearfix {
+  *zoom: 1;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.inner {
+  width: @page-width;
+  margin: 0 auto;
+  &:extend(.clearfix all);
+
+  @media screen and (max-width: 1020px) {
+    width: 100%;
+  }
+}
+
+#header {
+  margin: 30px auto;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 20px;
+
+    .f-left,
+    .f-right {
+      float: none;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+#container {
+  @media screen and (max-width: 1020px) {
+    margin-right: 300px;
+  }
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+  }
+}
+
+#main {
+  width: 660px;
+  float: left;
+
+  @media screen and(max-width: 1020px) {
+    width: 100%;
+    margin-right: -300px;
+  }
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+    float: none;
+  }
+}
+
+#sidebar {
+  width: 270px;
+  float: right;
+  @media screen and (max-width: 900px) {
+    float: none;
+    width: 100%;
+  }
+}

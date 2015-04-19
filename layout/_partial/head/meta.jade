@@ -1,0 +1,46 @@
+if config.author
+  meta(name='author', content=config.author)
+
+
+- var description
+if page.description
+  - description = page.description
+else if page.excerpt
+  - description = trim(strip_html(page.excerpt))
+else if page.content
+  - description = truncate(trim(strip_html(page.content)), 150)
+else if config.description
+  - description = config.description
+
+if description
+  meta(name='description', content=description)
+
+
+- var keywords = page.keywords
+if config.keywords
+  - keywords = keywords ? keywords + ',' + congconfig.keywordsif : config.keywords
+
+if keywords
+  meta(name='keywords', content=keywords)
+
+
+meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+if page.title
+  meta(property='og:title', content=page.title)
+if config.author
+  meta(property='og:site_name', content=config.author)
+
+
+- var cover
+if page.cover
+  - cover = page.cover
+else if config.cover
+  - cover = config.cover
+
+if cover
+  meta(property='og:image', content=cover)
+
+link(href=url_for('favicon.ico'), rel='icon', type='image/x-ico')
+link(href=url_for('atom.xml'), rel='alternate', title=config.title, type='application/atom+xml')
+

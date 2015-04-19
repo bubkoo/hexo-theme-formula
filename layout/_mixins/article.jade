@@ -1,0 +1,16 @@
+include article/header
+include article/gallery
+include article/content
+include article/nav
+include article/footer
+include article/comment
+
+mixin article(post)
+  article.article(class=post.layout)
+    div.article-wrap
+      +header(post)
+      +gallery(post)
+      +content(post)
+      +footer(post)
+    +nav(post)
+  +comment(post)

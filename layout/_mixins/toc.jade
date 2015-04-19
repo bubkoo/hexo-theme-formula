@@ -1,0 +1,7 @@
+mixin toc(page)
+  if page.layout === 'post' || page.layout === 'link'
+    aside#topic-wrap.toc-wrap.f-right
+      h3.toc-wrap-title= __('toc')
+      div.toc-tree
+        != toc(page.content, {list_number: true})
+      div.toc-progress

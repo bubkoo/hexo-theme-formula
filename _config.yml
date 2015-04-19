@@ -1,0 +1,28 @@
+menu:
+  <>: /
+  Archives: /archives
+  # Lab: http://lab.bubkoo.com/
+  # 关于: /about
+  # 简历: /resume
+  Github: https://github.com/bubkoo
+  # RSS: /atom.xml
+
+widgets:
+#  - search
+  - tagcloud
+#  - category
+  - recent_posts
+#  - clock
+#  - archive
+#  - recent_comments
+#  - recent_visitors
+
+recent_posts_count: 10
+
+blogrolls:
+  - Heroic Yang's Blog: http://heroicyang.com/
+
+duoshuo: bubkoo
+baidu_analysis: true
+
+rss:

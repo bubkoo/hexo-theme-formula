@@ -1,0 +1,20 @@
+mixin footer(post)
+  footer.article-footer.clearfix
+    if is_home()
+      //- 查看全文连接
+      - var postPath = url_for(post.path)
+      - var href = postPath + (post.excerpt ? '#more' : '')
+      div.f-left
+        a.more-link(href=href)= __('more')
+
+      if is_home() && theme.duoshuo && false
+        div.f-right
+          a.comment-link(href=postPath + '#article-comment')
+            = __('comments')
+            span.ds-thread-count(data-thread-key=post.permalink, data-count-type='comments')
+
+    else
+      include ./category
+      include ./tag
+      +category(post)
+      +tag(post)

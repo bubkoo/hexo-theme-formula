@@ -1,0 +1,32 @@
+.fancybox {
+  img {
+    border: 1px solid #ddd;
+    padding: 10px;
+    max-width: 600px;
+    .box-sizing(border-box);
+    .border-radius(5px);
+    .box-shadow(1px 1px 4px rgba(150, 150, 150, 0.3));
+
+    &:hover {
+      .box-shadow(1px 1px 4px rgba(150, 150, 150, 0.5));
+    }
+  }
+}
+
+.img-caption {
+  position: relative;
+  display: block;
+  padding-left: 25px;
+  margin-top: 5px;
+  color: #999;
+  font-size: .9em;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    content: '\f040';
+    font: 1.3em FontAwesome;
+  }
+}
+

@@ -1,0 +1,5 @@
+if site.tags.length
+  div.widget.tagcloud
+    h3.widget-title= __('tagcloud')
+    div.widget-content
+      != tagcloud(site.tags)
