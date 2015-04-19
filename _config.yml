@@ -1,11 +1,11 @@
 menu:
   <>: /
   Archives: /archives
-  # Lab: http://lab.bubkoo.com/
-  # 关于: /about
-  # 简历: /resume
+#  Lab: http://lab.bubkoo.com/
+#  关于: /about
+#  简历: /resume
   Github: https://github.com/bubkoo
-  # RSS: /atom.xml
+#  RSS: /atom.xml
 
 widgets:
 #  - search
@@ -24,5 +24,4 @@ blogrolls:
 
 duoshuo: bubkoo
 baidu_analysis: true
-
-rss:
+rss: true
