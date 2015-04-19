@@ -98,6 +98,9 @@ define(function (require, exports, module) {
             }
         };
         $(window)
+            .on('load.sticky'+ this.stickyId, function () {
+                self.adjust();
+            })
             .on('scroll.sticky' + this.stickyId, function () {
                 scrollCallback.call(self);
             })
@@ -174,6 +177,10 @@ define(function (require, exports, module) {
         };
 
         $(window)
+            .on('load.sticky'+ this.stickyId, function () {
+                // 当页面有较多图片时，需要在 load 之后，重新计算
+                self.adjust();
+            })
             .on('scroll.sticky' + this.stickyId, function () {
                 scrollCallback.call(self);
             })
