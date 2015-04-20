@@ -11,9 +11,9 @@ else
     - title.push(page.tag)
   else if is_archive()
     if page.year
-      - title.push(__('archive_b', page.year + (page.month ? '/' + page.month : '')))
+      - title.push(__('archive_something', page.year + (page.month ? '/' + page.month : '')))
     else
-      - title.push(__('archive_a'))
+      - title.push(__('archive'))
 
 - title.push(config.title)
 

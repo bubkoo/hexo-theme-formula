@@ -1,22 +1,23 @@
+
+toc       : 内容
+search    : 搜索
+tags      : 标签
+tagcloud  : 标签
+comment   : 留言
+archive   : 归档
+blogroll  : 链接
 categories: 分类
-search: 搜索
-tags: 标签
-tagcloud: 标签
-archive: 归档
-blogroll: 链接
-recent_posts: 最新文章
+recent_posts   : 最新文章
 recent_comments: 最新评论
 recent_visitors: 最近访客
-toc: 内容
-
-prev: 上一页
-next: 下一页
-comment: 留言
-archive_a: 归档
-archive_b: "归档：%s"
-page: "第 %d 页"
 
 more: 全文
-comments: Comments
+prev: 上一页
+next: 下一页
+page: "第 %d 页"
+
+archive_something: "归档：%s"
+
 day_format: DD
 year_month_format: YYYY年MM月
+month_day_format: M月DD日

@@ -1,7 +1,8 @@
+//- Author
 if config.author
   meta(name='author', content=config.author)
 
-
+//- Description
 - var description
 if page.description
   - description = page.description
@@ -15,7 +16,7 @@ else if config.description
 if description
   meta(name='description', content=description)
 
-
+//- Keywords
 - var keywords = page.keywords
 if config.keywords
   - keywords = keywords ? keywords + ',' + congconfig.keywordsif : config.keywords
@@ -31,7 +32,7 @@ if page.title
 if config.author
   meta(property='og:site_name', content=config.author)
 
-
+//- Cover
 - var cover
 if page.cover
   - cover = page.cover
@@ -42,5 +43,7 @@ if cover
   meta(property='og:image', content=cover)
 
 link(href=url_for('favicon.ico'), rel='icon', type='image/x-ico')
-link(href=url_for('atom.xml'), rel='alternate', title=config.title, type='application/atom+xml')
 
+//- RSS
+if theme.rss
+  link(href=url_for('atom.xml'), rel='alternate', title=config.title, type='application/atom+xml')

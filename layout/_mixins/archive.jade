@@ -2,7 +2,7 @@ mixin archive(post)
   article.archive-item(class='archive-item-' + post.layout)
     header.archive-header
       time.archive-header-time(datetime=date_xml(post.date), itemprop='datePublished')
-        = date(post.date, 'M月DD日')
+        = date(post.date, __('month_day_format'))
 
       - var title = post.title || post.link
       - var href = post.link || url_for(post.path)

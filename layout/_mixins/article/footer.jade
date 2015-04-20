@@ -10,7 +10,7 @@ mixin footer(post)
       if is_home() && theme.duoshuo && false
         div.f-right
           a.comment-link(href=postPath + '#article-comment')
-            = __('comments')
+            = __('comment')
             span.ds-thread-count(data-thread-key=post.permalink, data-count-type='comments')
 
     else

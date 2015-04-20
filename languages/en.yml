@@ -1,0 +1,23 @@
+
+toc       : Table Of Content
+search    : Search
+tags      : Tags
+tagcloud  : Tag Cloud
+comment   : Comments
+archive   : Archives
+blogroll  : Blogroll
+categories: Categories
+recent_posts   : Recent Posts
+recent_comments: Recent Comments
+recent_visitors: Recent Visitors
+
+more: more
+prev: Prev
+next: Next
+page: "Page %d"
+
+archive_something: "Archives：%s"
+
+day_format: DD
+year_month_format: YYYY-MM
+month_day_format: M-DD
