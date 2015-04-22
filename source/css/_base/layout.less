@@ -24,6 +24,19 @@
   url(//fontsta.sh/font/droidsansmono/DroidSansMono.eot) format('embedded-opentype');
 }
 
+// selection 的样式必须分开写，才能生效
+::selection {
+  color: #fff;
+  background: #E84893;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #E84893;
+  text-shadow: none;
+}
+
 body {
   background: url('/images/bg.jpg') fixed repeat center top @color-background;
   color: @color-font;
@@ -31,13 +44,6 @@ body {
   font-size: 14px;
   line-height: 1.75em;
   text-shadow: 0 0 1px transparent;
-
-  & ::selection,
-  & ::-moz-selection {
-    color: #fff;
-    background: #E84893;
-    text-shadow: none;
-  }
 
   @media screen and (max-width: 1020px) {
     margin: 0 30px;
