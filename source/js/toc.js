@@ -19,14 +19,17 @@ define(function (require, exports, module) {
         return $toc.remove();
     }
 
-    var stick = sticky($toc, {
-        top: 30
-    }, onSticky);
-
-
     var nativeSpy;
     var ghostSpy;
     var $progress;
+    var isStickySupported = sticky.isStickySupported;
+
+    var stick = sticky($toc, {top: 30}, isStickySupported ? false : onSticky);
+
+    if (isStickySupported) {
+        $progress = stick.elem.find(CLASS_PROGRESS);
+        nativeSpy = scrollSpy(stick.elem.find(CLASS_TOC));
+    }
 
     function onSticky(sticking) {
         if (sticking) {

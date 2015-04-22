@@ -77,15 +77,18 @@ define(function (require, exports, module) {
     });
 
     // go2top
+    function onScroll() {
+        $('#go2top')[$(window).scrollTop() > 100 ? 'fadeIn' : 'fadeOut'](400);
+    }
+
     $('#go2top').click(function () {
         $('html,body').animate({
             scrollTop: 0
         });
     });
 
-    $(window).scroll(function () {
-        $('#go2top')[$(this).scrollTop() > 100 ? 'fadeIn' : 'fadeOut'](400)
-    });
+    $(window).scroll(onScroll);
+
 });
 
 
