@@ -1,0 +1,13 @@
+doctype html
+html(lang=config.language)
+  head
+    include ./_partial/head
+  body
+    include ./_partial/header
+    div#container.inner
+      div
+        include ./_mixins/article
+        +article(page)
+    include ./_partial/footer
+    include ./_partial/go2top
+    include ./_partial/scripts
