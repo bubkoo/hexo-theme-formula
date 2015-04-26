@@ -55,7 +55,7 @@ define(function (require, exports, module) {
 
                 if (selector) {
                     // 替换 selector 中的特殊字符
-                    selector = selector.replace(/([\s\.\*\=\+\>\,\[\]\:\~\?\'\"\(\)])/g, '\\$1');
+                    selector = selector.replace(/([\s\.\*\#\=\+\>\,\[\]\:\~\?\'\"\(\)])/g, '\\$1');
 
                     var target = /^#./.test(selector) && $(selector);
                     return (target && target.length && target.is(':visible') && [
