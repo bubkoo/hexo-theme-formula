@@ -55,15 +55,19 @@ define(function (require, exports, module) {
 
                 if (selector) {
                     // 替换 selector 中的特殊字符
-                    selector = selector.replace(/([\s\.\*\#\=\+\>\,\[\]\:\~\?\'\"\(\)])/g, '\\$1');
+                    selector = selector.replace(/([\s\.\*\=\+\>\,\[\]\:\~\?\'\"\(\)])/g, '\\$1');
 
-                    var target = /^#./.test(selector) && $(selector);
-                    return (target && target.length && target.is(':visible') && [
-                        [
-                            target[offsetMethod]().top + (isWindow ? 0 : that.elem.scrollTop()),
-                            selector
-                        ]
-                    ])
+                    try {
+                        var target = /^#./.test(selector) && $(selector);
+                        return (target && target.length && target.is(':visible') && [
+                            [
+                                target[offsetMethod]().top + (isWindow ? 0 : that.elem.scrollTop()),
+                                selector
+                            ]
+                        ]);
+                    } catch (e) {
+
+                    }
                 }
             }).filter(function (o) { // 用了原生方法，注意兼容性
                 // 过滤掉空元素
@@ -76,7 +80,6 @@ define(function (require, exports, module) {
                 // 收集href值（ID 选择器）
                 that.targets.push(this[1]);
             });
-
 
             return that;
         },
