@@ -3,7 +3,9 @@ define(function (require, exports, module) {
 
     // fancybox
     $('.article-content').each(function (i) {
-        $(this).find('img')
+        $(this)
+            .find('img')
+            .not('.no-fancy')
             .each(function () {
                 var $this = $(this);
                 if ($this.parent().hasClass('fancybox')) {
@@ -28,53 +30,55 @@ define(function (require, exports, module) {
         var width = parent.width();
 
         item.imagesLoaded(function () {
-            var _this = this[0];
-            var nWidth = _this.naturalWidth;
+            var _this   = this[0];
+            var nWidth  = _this.naturalWidth;
             var nHeight = _this.naturalHeight;
 
             callback();
-            this.animate({opacity: 1}, 500);
-            parent.animate({height: width * nHeight / nWidth}, 500);
+            this.animate({ opacity: 1 }, 500);
+            parent.animate({ height: width * nHeight / nWidth }, 500);
         });
     }
 
-    $('.article-gallery').each(function () {
-        var $this = $(this);
-        var current = 0;
-        var photoset = $this.children('.article-gallery-photos').children();
-        var photoCount = photoset.length;
-        var loading = true;
+    $('.article-gallery')
+        .each(function () {
 
-        play($this, photoset.eq(0), function () {
-            loading = false;
-        });
+            var $this      = $(this);
+            var current    = 0;
+            var photoset   = $this.children('.article-gallery-photos').children();
+            var photoCount = photoset.length;
+            var loading    = true;
 
-        $this
-            .on('click', '.prev', function () {
-                if (!loading) {
-                    var next = (current - 1) % photoCount;
-                    loading = true;
-
-                    play($this, photoset.eq(next), function () {
-                        photoset.eq(current).animate({opacity: 0}, 500);
-                        loading = false;
-                        current = next;
-                    });
-                }
-            })
-            .on('click', '.next', function () {
-                if (!loading) {
-                    var next = (current + 1) % photoCount;
-                    loading = true;
-
-                    play($this, photoset.eq(next), function () {
-                        photoset.eq(current).animate({opacity: 0}, 500);
-                        loading = false;
-                        current = next;
-                    });
-                }
+            play($this, photoset.eq(0), function () {
+                loading = false;
             });
-    });
+
+            $this
+                .on('click', '.prev', function () {
+                    if (!loading) {
+                        var next = (current - 1) % photoCount;
+                        loading  = true;
+
+                        play($this, photoset.eq(next), function () {
+                            photoset.eq(current).animate({ opacity: 0 }, 500);
+                            loading = false;
+                            current = next;
+                        });
+                    }
+                })
+                .on('click', '.next', function () {
+                    if (!loading) {
+                        var next = (current + 1) % photoCount;
+                        loading  = true;
+
+                        play($this, photoset.eq(next), function () {
+                            photoset.eq(current).animate({ opacity: 0 }, 500);
+                            loading = false;
+                            current = next;
+                        });
+                    }
+                });
+        });
 
     // go2top
     function onScroll() {
@@ -88,14 +92,4 @@ define(function (require, exports, module) {
     });
 
     $(window).scroll(onScroll);
-
 });
-
-
-
-
-
-
-
-
-
