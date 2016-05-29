@@ -16,12 +16,14 @@ if theme.google_analytics
       var script  = document.createElement('script');
 
       script.async = true;
-      script.src  = src;
+      script.src   = src;
 
       thisTag.parentNode.insertBefore(script, thisTag);
 
-      script.parentNode.removeChild(script);
-      thisTag.parentNode.removeChild(thisTag);
+      setTimeout(function () {
+        script.parentNode.removeChild(script);
+        thisTag.parentNode.removeChild(thisTag);
+      }, 100);
 
     })(window, document, '//www.google-analytics.com/analytics.js', 'ga');
 

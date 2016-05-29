@@ -9,8 +9,10 @@ if theme.baidu_analysis
 
       thisTag.parentNode.insertBefore(script, thisTag);
 
-      script.parentNode.removeChild(script);
-      thisTag.parentNode.removeChild(thisTag);
+      setTimeout(function () {
+        script.parentNode.removeChild(script);
+        thisTag.parentNode.removeChild(thisTag);
+      }, 100);
     })();
 
 
