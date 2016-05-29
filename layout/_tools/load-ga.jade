@@ -1,0 +1,29 @@
+if theme.google_analytics
+  script(id='google_analytics').
+    (function (window, document, src, ga) {
+
+      window['GoogleAnalyticsObject'] = ga;
+
+      if (!window[ga]) {
+        window[ga] = function () {
+          (window[ga].q = window[ga].q || []).push(arguments);
+        };
+      }
+
+      window[ga].l = 1 * new Date();
+
+      var thisTag = document.getElementById('google_analytics');
+      var script  = document.createElement('script');
+
+      script.async = true;
+      script.src  = src;
+
+      thisTag.parentNode.insertBefore(script, thisTag);
+
+      script.parentNode.removeChild(script);
+      thisTag.parentNode.removeChild(thisTag);
+
+    })(window, document, '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', '!{theme.google_analytics}', 'auto');
+    ga('send', 'pageview');

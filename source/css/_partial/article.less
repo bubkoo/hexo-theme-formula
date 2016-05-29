@@ -5,7 +5,7 @@
   .article-wrap,
   .comment-wrap {
     position: relative;
-    background: #fff;
+    background: #FFF;
     padding: 20px 30px 15px 30px;
     margin-bottom: 50px;
   }
@@ -60,8 +60,8 @@
   }
 }
 
-@icon-size : 32px;
-@icon-gap : 25px;
+@icon-size: 32px;
+@icon-gap: 25px;
 
 .article-header {
 
@@ -163,12 +163,18 @@
   }
 
   table {
+    width: 100%;
     border-collapse: collapse;
     td,
     th {
-      border: 1px solid #999;
+      border: 1px solid #D2D2D2;
       padding: 0.5rem;
       text-align: left;
+    }
+
+    thead th {
+      font-weight: 600;
+      background-color: #E6E6E6;
     }
 
     tbody tr:nth-of-type(odd) {
@@ -179,14 +185,14 @@
   blockquote {
     font-family: "Georgia", tahoma, sans-serif;
     font-size: 1.1em;
-    background: #f9f9f9;
-    border-left: 10px solid #1ba1e2;
+    background: #F9F9F9;
+    border-left: 10px solid #1BA1E2;
     margin: 1.5em 10px;
     padding: .5em 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
 
     &:before {
-      color: #1ba1e2;
+      color: #1BA1E2;
       content: open-quote;
       font-size: 4em;
       line-height: .1em;
@@ -208,7 +214,7 @@
 
       cite:before {
         content: '—';
-        color: #ccc;
+        color: #CCC;
         padding: 0 .5em;
       }
     }
@@ -243,7 +249,7 @@
 
   h1, h2 {
     font-weight: 600;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #DDD;
     padding-bottom: 10px;
     margin-top: 20px;
   }
@@ -306,7 +312,7 @@
   position: relative;
   margin-top: 15px;
   padding-top: 10px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #DDD;
   color: #999;
   font-size: .9em;
   line-height: 16px;

@@ -1,12 +1,16 @@
 if theme.baidu_analysis
-  script(id='redundancy1').
+  script(id='baidu_tongji').
+    var _hmt = _hmt || [];
     (function () {
-      var protocol = 'https:' == document.location.protocol ? ' https://' : ' http://';
-      document.write(decodeURIComponent("%3Cscript charset='utf-8' id='redundancy2' src='" + protocol + "hm.baidu.com/h.js%3F49a1665c33b011585a2a629fdbed5b61' type='text/javascript' %3E%3C/script%3E"));
+      var script  = document.createElement('script');
+      var thisTag = document.getElementById('baidu_tongji');
 
-      var script = document.getElementById('redundancy1');
-      script && script.parentNode.removeChild(script);
-      script = document.getElementById('redundancy2');
-      script && script.parentNode.removeChild(script);
+      script.src = '//hm.baidu.com/hm.js?!{theme.baidu_analysis}';
 
+      thisTag.parentNode.insertBefore(script, thisTag);
+
+      script.parentNode.removeChild(script);
+      thisTag.parentNode.removeChild(thisTag);
     })();
+
+

@@ -2,10 +2,10 @@ menu:
   <>: /
   Archives: /archives
 #  Lab: http://lab.bubkoo.com/
-#  关于: /about
-#  简历: /resume
+#  About: /about
+#  Resume: /resume
   Github: https://github.com/bubkoo
-#  微博: http://weibo.com/jeffreypee
+#  Weibo: http://weibo.com/jeffreypee
 #  RSS: /atom.xml
 
 widgets:
@@ -24,5 +24,6 @@ blogrolls:
   - Heroic Yang's Blog: http://heroicyang.com/
 
 duoshuo: bubkoo
-baidu_analysis: true
+baidu_analysis: 49a1665c33b011585a2a629fdbed5b61
+google_analytics: UA-78428859-2
 rss: true
