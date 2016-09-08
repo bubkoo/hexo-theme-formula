@@ -2,5 +2,20 @@
   color: @color-meta;
   margin-bottom: 50px;
   font: 0.9em/1.6 @font-title;
-  .text-shadow(0 0 1px #fff);
+  .text-shadow(0 0 1px #FFF);
+
+  .theme {
+
+    margin-left: 10px;
+
+    a {
+      opacity: .3;
+      .transition(opacity .4s);
+
+      &:hover {
+        opacity: 1;
+        .transition(opacity .4s);
+      }
+    }
+  }
 }

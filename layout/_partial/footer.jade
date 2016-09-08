@@ -2,4 +2,7 @@
 - var copyOrg = config.author || config.title
 
 footer#footer.inner
-  = '© ' + copyYear + ' ' + copyOrg
+  span.copyright
+    = '© ' + copyYear + ' ' + copyOrg
+  span.theme @
+    a(href='https://github.com/bubkoo/hexo-theme-formula', target='_blank') formula
