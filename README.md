@@ -1,5 +1,8 @@
 # hexo-theme-formula
 
+[![MIT License](https://img.shields.io/badge/license-MIT_License-green.svg?style=flat-square)](https://github.com/bubkoo/hexo-theme-formula/blob/master/LICENSE)
+
+
 > Hexo theme base on jade and less.
 
 Demo. [http://bubkoo.com/](http://bubkoo.com/)
