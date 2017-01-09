@@ -1,5 +1,4 @@
 var hasOwn = Object.prototype.hasOwnProperty;
-
 var blocks = {
     div: 'div',
     section: 'section'
@@ -14,6 +13,7 @@ for (var key in blocks) {
                 args = args || [];
                 args.unshift(key);
                 var className = args.join(' ');
+
                 content = hexo.render.renderSync({
                     text: content,
                     engine: 'markdown'
@@ -28,8 +28,6 @@ for (var key in blocks) {
 
 
 // 指定 filter 的优先级，内置 filter 的优先级为 10，值越小越先执行
-
-//hexo.extend.filter.register('before_post_render', require('./lib/extra-syntax'), 9);
-//hexo.extend.filter.register('after_post_render', require('./lib/rollbackStatics'), 100);
+// hexo.extend.filter.register('before_post_render', require('./lib/extra-syntax'), 9);
 
 hexo.on('new', require('./lib/on-new'));
