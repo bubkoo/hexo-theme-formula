@@ -76,10 +76,6 @@
     margin-right: @icon-gap;
     color: @color-link;
 
-    @media screen and (max-width: 600px) {
-      display: none;
-    }
-
     &:before {
       position: absolute;
       top: 0;
@@ -101,11 +97,6 @@
     margin-top: -2px;
     padding: 0 80px 0 32px;
 
-    @media screen and (max-width: 600px) {
-      padding: 0 50px 0 0;
-      font-size: 1.5em;
-    }
-
     a {
       color: @color-link;
       &:hover {
@@ -117,26 +108,27 @@
 
   .article-header-time {
     position: absolute;
-    top: 10px;
+    top: 14px;
     right: 24px;
     width: 80px;
-    font-style: italic;
     font-family: @font-serif;
     text-align: center;
+    line-height: 1;
 
     span {
       display: block;
     }
 
     .day {
-      margin: 0 0 5px 0;
-      font-size: 36px;
+      font-style: italic;
+      font-size: 32px;
       color: @color-link;
     }
 
     .month {
       font-size: .8em;
       color: @color-meta;
+      line-height: 1.2;
     }
   }
 }
@@ -270,7 +262,8 @@
     font-size: 1em;
   }
 
-  img, video {
+  img,
+  video {
     max-width: 100%;
     height: auto;
     border: none;
@@ -377,6 +370,30 @@
   .tags {
     &:before {
       content: '\f02c';
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .article-header {
+
+    .article-header-icon {
+      display: none;
+    }
+
+    .article-header-title {
+      padding: 0 60px 0 0;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .article-header-time {
+      width: 60px;
+      top: 10px;
+
+      .day {
+        font-size: 24px;
+      }
     }
   }
 }
