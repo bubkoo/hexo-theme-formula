@@ -2,6 +2,44 @@ mixin comment(post)
   if !is_home() && page.comments && theme.gitment
     section#article-comment.article-comment
     link(rel="stylesheet", href="https://imsun.github.io/gitment/style/default.css")
+    style.
+      .gitment-root-container{
+        margin: 40px 0;
+      }
+      .gitment-container {
+        font-size: 12px;
+      }
+      .gitment-comment-main, .gitment-editor-main{
+        background-color: #fff;
+      }
+      .gitment-footer-container{
+        color: #999;
+      }
+      .gitment-comment-main,
+      .gitment-editor-main{
+        background: #fff;
+      }
+      a.gitment-footer-project-link,
+      a.gitment-footer-project-link:visited,
+      a.gitment-editor-login-link,
+      a.gitment-editor-login-link:visited {
+        color: #1ba1e2;
+        opacity: .3;
+        -webkit-transition: opacity 0.4s;
+        -moz-transition: opacity 0.4s;
+        -o-transition: opacity 0.4s;
+        -ms-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+      a.gitment-footer-project-link:hover,
+      a.gitment-editor-login-link:hover{
+        opacity: 1;
+        -webkit-transition: opacity 0.4s;
+        -moz-transition: opacity 0.4s;
+        -o-transition: opacity 0.4s;
+        -ms-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
     script(src="https://imsun.github.io/gitment/dist/gitment.browser.js")
     script.
       var options = {
