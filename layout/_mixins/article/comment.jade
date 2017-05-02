@@ -1,7 +1,16 @@
 mixin comment(post)
-  if !is_home() && page.comments && theme.duoshuo
+  if !is_home() && page.comments && theme.gitment
     section#article-comment.article-comment
-      div.ds-thread(
-      data-thread-key=post.permalink,
-      data-title=post.title,
-      data-url=post.permalink)
+    link(rel="stylesheet", href="https://imsun.github.io/gitment/style/default.css")
+    script(src="https://imsun.github.io/gitment/dist/gitment.browser.js")
+    script.
+      var options = {
+        owner: '!{theme.gitment.owner}',
+        repo:  '!{theme.gitment.repo}',
+        oauth: {
+          client_id: '!{theme.gitment.oauth.client_id}',
+          client_secret: '!{theme.gitment.oauth.client_secret}',
+        }
+      };
+      var gitment = new Gitment(options);
+      gitment.render('article-comment')

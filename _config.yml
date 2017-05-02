@@ -23,7 +23,13 @@ recent_posts_count: 10
 blogrolls:
   - Heroic Yang's Blog: http://heroicyang.com/
 
-duoshuo: bubkoo
+gitment:
+  owner: bubkoo
+  repo:  bubkoo.github.com
+  oauth:
+    client_id: 13c9fa4a27f96e5296bf
+    client_secret: d0f07fcf8605a22de1e57fd96ddb0666d2ce0751
+
 baidu_analysis: 49a1665c33b011585a2a629fdbed5b61
 google_analytics: UA-78428859-2
 rss: true
